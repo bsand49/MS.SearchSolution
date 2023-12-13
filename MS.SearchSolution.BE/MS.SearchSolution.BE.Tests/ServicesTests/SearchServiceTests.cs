@@ -6,7 +6,7 @@ using MS.SearchSolution.BE.Services;
 
 namespace MS.SearchSolution.BE.Tests.ServicesTests
 {
-    [TestOf(typeof(SearchService))]
+    [TestFixture(TestOf = typeof(SearchService))]
     [Category("SearchServiceTests")]
     [CancelAfter(250)]
     public class SearchServiceTests
@@ -70,16 +70,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
                 new(8, "James", "Kubu", "hkubu7@craigslist.org", GenderEnum.Male),
                 new(11, "James", "Pfeffer", "bpfeffera@amazon.com", GenderEnum.Male)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -93,16 +93,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
                 new(11, "James", "Pfeffer", "bpfeffera@amazon.com", GenderEnum.Male),
                 new(14, "Chalmers", "Longfut", "clongfujam@wp.com", GenderEnum.Male)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -114,16 +114,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
             {
                 new(18, "Katey", "Soltan", "ksoltanh@simplemachines.org", GenderEnum.Female)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -143,16 +143,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
                 new(15, "Linnell", "Jumont", "ljumonte@storify.com", GenderEnum.Female),
                 new(16, "Viole", "Eaglen", "veaglenf@nytimes.com", GenderEnum.Female)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -182,16 +182,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
                 new(19, "Gar", "Motion", "gmotioni@shop-pro.jp", GenderEnum.Male),
                 new(20, "Kameko", "Vanes", "kvanesj@discuz.net", GenderEnum.Female)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
         
         [Test]
@@ -204,16 +204,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
                 new(1, "Antony", "Fitt", "afitt0@a8.net", GenderEnum.Male),
                 new(9, "Jasen", "Jiroudek", "jjiroudek8@google.it", GenderEnum.Polygender)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -226,16 +226,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
                 new(3, "Ardelle", "Soames", "asoames2@google.it", GenderEnum.Female),
                 new(18, "Katey", "Soltan", "ksoltanh@simplemachines.org", GenderEnum.Female)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -250,16 +250,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
                 new(10, "Gusty", "Tuxill", "gtuxill9@illinois.edu", GenderEnum.Female),
                 new(18, "Katey", "Soltan", "ksoltanh@simplemachines.org", GenderEnum.Female)
             });
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(expectedResult));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -267,16 +267,16 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
         {
             // Setup
             var searchTerm = "Jasmine Duncan";
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_personsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_personsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(_emptyPersonSearchResponseContainer));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
@@ -284,32 +284,32 @@ namespace MS.SearchSolution.BE.Tests.ServicesTests
         {
             // Setup
             var searchTerm = "";
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ReturnsAsync(_emptyPersonsList);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ReturnsAsync(_emptyPersonsList);
 
             // Function Call
-            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm);
+            var result = await _searchService.GetPersonsBySearchTermAsync(searchTerm, CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(_emptyPersonSearchResponseContainer));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
 
         [Test]
         public void SearchService_GetPersonsBySearchTermAsync_ExceptionThrownRetrievingData_ThrowsException()
         {
             // Setup
-            _personsRepository.Setup(mock => mock.GetPersonsAsync()).ThrowsAsync(_genericExcpetion);
+            _personsRepository.Setup(mock => mock.GetPersonsAsync(CancellationToken.None)).ThrowsAsync(_genericExcpetion);
 
             // Function Call
-            var result = Assert.ThrowsAsync<Exception>(async() => await _searchService.GetPersonsBySearchTermAsync(string.Empty));
+            var result = Assert.ThrowsAsync<Exception>(async() => await _searchService.GetPersonsBySearchTermAsync(string.Empty, CancellationToken.None));
 
             // Assertions
             Assert.That(result.Message, Is.EqualTo(_genericExcpetion.Message));
 
             // Verify Mocks
-            _personsRepository.Verify(mock => mock.GetPersonsAsync(), Times.Once);
+            _personsRepository.Verify(mock => mock.GetPersonsAsync(CancellationToken.None), Times.Once);
         }
         #endregion
     }

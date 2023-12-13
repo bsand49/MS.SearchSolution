@@ -17,11 +17,11 @@ namespace MS.SearchSolution.BE.Repositories
         public PersonsRepository(ILogger<PersonsRepository> logger, IConfiguration config) => (_logger, _config) = (logger, config);
         #endregion
 
-        public async Task<IEnumerable<Person>> GetPersonsAsync()
+        public async Task<IEnumerable<Person>> GetPersonsAsync(CancellationToken ct)
         {
             try
             {
-                var personsListJson = await File.ReadAllTextAsync(PersonsDataFilePath);
+                var personsListJson = await File.ReadAllTextAsync(PersonsDataFilePath, ct);
                 _logger.LogInformation("Read json {personsListJson} from file {file}.", personsListJson, PersonsDataFilePath);
 
                 return JsonConvert.DeserializeObject<IEnumerable<Person>>(personsListJson) ?? Enumerable.Empty<Person>();

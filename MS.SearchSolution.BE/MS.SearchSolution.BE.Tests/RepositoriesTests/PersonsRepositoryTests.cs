@@ -8,7 +8,7 @@ using System.Text;
 
 namespace MS.SearchSolution.BE.Tests.RepositoriesTests
 {
-    [TestOf(typeof(PersonsRepository))]
+    [TestFixture(TestOf = typeof(PersonsRepository))]
     [Category("PersonsRepositoryTests")]
     [CancelAfter(250)]
     public class PersonsRepositoryTests
@@ -72,7 +72,7 @@ namespace MS.SearchSolution.BE.Tests.RepositoriesTests
         public async Task PersonsRepository_GetPersonsAsync_FileExistsAndContainsValidData_ReturnsIEnumerable()
         {
             // Function Call
-            var result = await _personsRepository.GetPersonsAsync();
+            var result = await _personsRepository.GetPersonsAsync(CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.EqualTo(_personsList));
@@ -86,7 +86,7 @@ namespace MS.SearchSolution.BE.Tests.RepositoriesTests
             _personsRepository = new(_logger.Object, config);
 
             // Function Call
-            var result = Assert.ThrowsAsync<Exception>(async () => await _personsRepository.GetPersonsAsync());
+            var result = Assert.ThrowsAsync<Exception>(async () => await _personsRepository.GetPersonsAsync(CancellationToken.None));
 
             // Assertions
             Assert.That(result.Message, Is.EqualTo(_filePathNotInConfigExceptionMessage));
@@ -100,7 +100,7 @@ namespace MS.SearchSolution.BE.Tests.RepositoriesTests
             _personsRepository = new(_logger.Object, config);
 
             // Function Call
-            var result = Assert.ThrowsAsync<FileNotFoundException>(async () => await _personsRepository.GetPersonsAsync());
+            var result = Assert.ThrowsAsync<FileNotFoundException>(async () => await _personsRepository.GetPersonsAsync(CancellationToken.None));
 
             // Assertions
             Assert.That(result.Message, Does.StartWith(_fileNotFoundExceptionMessage));
@@ -114,7 +114,7 @@ namespace MS.SearchSolution.BE.Tests.RepositoriesTests
             _personsRepository = new(_logger.Object, config);
 
             // Function Call
-            var result = await _personsRepository.GetPersonsAsync();
+            var result = await _personsRepository.GetPersonsAsync(CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.Empty);
@@ -128,7 +128,7 @@ namespace MS.SearchSolution.BE.Tests.RepositoriesTests
             _personsRepository = new(_logger.Object, config);
 
             // Function Call
-            var result = await _personsRepository.GetPersonsAsync();
+            var result = await _personsRepository.GetPersonsAsync(CancellationToken.None);
 
             // Assertions
             Assert.That(result, Is.Empty);
@@ -142,7 +142,7 @@ namespace MS.SearchSolution.BE.Tests.RepositoriesTests
             _personsRepository = new(_logger.Object, config);
 
             // Function Call
-            var result = Assert.ThrowsAsync<JsonSerializationException>(async () => await _personsRepository.GetPersonsAsync());
+            var result = Assert.ThrowsAsync<JsonSerializationException>(async () => await _personsRepository.GetPersonsAsync(CancellationToken.None));
 
             // Assertions
             Assert.That(result.Message, Does.StartWith(_requiredPropertyMissingExceptionMessage));
@@ -156,7 +156,7 @@ namespace MS.SearchSolution.BE.Tests.RepositoriesTests
             _personsRepository = new(_logger.Object, config);
 
             // Function Call
-            var result = Assert.ThrowsAsync<JsonSerializationException>(async() => await _personsRepository.GetPersonsAsync());
+            var result = Assert.ThrowsAsync<JsonSerializationException>(async() => await _personsRepository.GetPersonsAsync(CancellationToken.None));
 
             // Assertions
             Assert.That(result.Message, Does.StartWith(_jsonSerializationExceptionMessage));

@@ -40,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
@@ -54,6 +55,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MS.SearchSolution.BE.API\MS.SearchSolution.BE.API.csproj" />
     <ProjectReference Include="..\MS.SearchSolution.BE.Models\MS.SearchSolution.BE.Models.csproj" />
     <ProjectReference Include="..\MS.SearchSolution.BE.Repositories\MS.SearchSolution.BE.Repositories.csproj" />
     <ProjectReference Include="..\MS.SearchSolution.BE.Services\MS.SearchSolution.BE.Services.csproj" />

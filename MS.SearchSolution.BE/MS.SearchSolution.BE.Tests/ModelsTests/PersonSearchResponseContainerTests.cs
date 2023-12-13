@@ -1,7 +1,11 @@
 ﻿using MS.SearchSolution.BE.Models;
+using NUnit.Framework.Internal;
 
 namespace MS.SearchSolution.BE.Tests.ModelsTests
 {
+    [TestFixture(TestOf = typeof(PersonSearchResponseContainer))]
+    [Category("PersonSearchResponseContainerTests")]
+    [CancelAfter(250)]
     public class PersonSearchResponseContainerTests
     {
         private readonly Person _person1 = new();

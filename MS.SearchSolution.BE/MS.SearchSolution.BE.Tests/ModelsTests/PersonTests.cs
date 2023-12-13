@@ -2,7 +2,7 @@
 
 namespace MS.SearchSolution.BE.Tests.ModelsTests
 {
-    [TestOf(typeof(Person))]
+    [TestFixture(TestOf = typeof(Person))]
     [Category("PersonTests")]
     [CancelAfter(250)]
     public class PersonTests
@@ -66,8 +66,8 @@ namespace MS.SearchSolution.BE.Tests.ModelsTests
             var person4 = new Person(0, string.Empty, string.Empty, string.Empty, GenderEnum.Female);
 
             // Function Call
-            var result1 = person1.Equals(person2); // True expected
-            var result2 = person3.Equals(person4); // True expected
+            var result1 = person1.Equals(person2);
+            var result2 = person3.Equals(person4);
 
             // Assertions
             Assert.Multiple(() => {

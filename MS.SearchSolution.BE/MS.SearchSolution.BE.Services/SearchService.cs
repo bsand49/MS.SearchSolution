@@ -14,12 +14,12 @@ namespace MS.SearchSolution.BE.Services
         public SearchService(ILogger<SearchService> logger, IPersonsRepository personsRepository) => (_logger, _personsRepository) = (logger, personsRepository);
         #endregion
 
-        public async Task<PersonSearchResponseContainer> GetPersonsBySearchTermAsync(string searchTerm)
+        public async Task<PersonSearchResponseContainer> GetPersonsBySearchTermAsync(string searchTerm, CancellationToken ct)
         {
             try
             {
                 // Get all persons from dataset
-                var allPersons = await _personsRepository.GetPersonsAsync();
+                var allPersons = await _personsRepository.GetPersonsAsync(ct);
                 _logger.LogInformation("Found {count} persons.", allPersons.Count());
 
                 // If no persons found, return immediately, as there's nothing to filter

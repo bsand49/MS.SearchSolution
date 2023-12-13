@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "http": {
+    "http - Development": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -10,7 +10,23 @@
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5084"
     },
-    "https": {
+    "http - Staging": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5084"
+    },
+    "http - Production": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5084"
+    },
+    "https - Development": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
@@ -20,12 +36,41 @@
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7201;http://localhost:5084"
     },
-    "IIS Express": {
+    "https - Staging": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7201;http://localhost:5084"
+    },
+
+    "https - Production": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7201;http://localhost:5084"
+    },
+    "IIS Express - Development": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express - Staging": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      }
+    },
+    "IIS Express - Production": {
+      "commandName": "IISExpress",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
     "Docker": {
