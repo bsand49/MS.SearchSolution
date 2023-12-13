@@ -4,6 +4,7 @@
     {
         Female,
         Male,
+        Polygender,
         Other,
         DoNotWishToSay
     }

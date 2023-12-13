@@ -10,7 +10,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="appsettings.Test.json" />
+    <None Remove="Data\empty.json" />
+    <None Remove="Data\json_array_empty.json" />
+    <None Remove="Data\json_array_not_persons_empty.json" />
+    <None Remove="Data\not_json.txt" />
+    <None Remove="Data\valid_persons.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Test.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\empty.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\json_array_empty.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\json_array_not_persons_empty.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\not_json.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\valid_persons.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="NUnit" Version="4.0.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
     <PackageReference Include="NUnit.Analyzers" Version="3.10.0">
@@ -22,6 +55,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MS.SearchSolution.BE.Models\MS.SearchSolution.BE.Models.csproj" />
+    <ProjectReference Include="..\MS.SearchSolution.BE.Repositories\MS.SearchSolution.BE.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

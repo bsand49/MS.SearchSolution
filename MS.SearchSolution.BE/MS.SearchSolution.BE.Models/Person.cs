@@ -1,5 +1,6 @@
-﻿using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
 
 namespace MS.SearchSolution.BE.Models
 {
@@ -8,19 +9,24 @@ namespace MS.SearchSolution.BE.Models
     {
 
         [DataMember(Name = "id")]
+        [JsonProperty(Required = Required.Always)]
         public int Id { get; set; }
 
         [DataMember(Name = "first_name")]
+        [JsonProperty(Required = Required.Always)]
         public string FirstName { get; set; }
 
         [DataMember(Name = "last_name")]
+        [JsonProperty(Required = Required.Always)]
         public string LastName { get; set; }
 
         [DataMember(Name = "email")]
+        [JsonProperty(Required = Required.Always)]
         public string Email { get; set; }
 
         [DataMember(Name = "gender")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonProperty(Required = Required.Always)]
+        [JsonConverter(typeof(StringEnumConverter))]
         public GenderEnum Gender { get; set; }
 
         #region Constructors
