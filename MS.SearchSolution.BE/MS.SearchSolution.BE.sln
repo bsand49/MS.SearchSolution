@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.SearchSolution.BE.Models
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.SearchSolution.BE.Tests", "MS.SearchSolution.BE.Tests\MS.SearchSolution.BE.Tests.csproj", "{5360399F-18A0-48CC-975F-96AA0BF2D161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.SearchSolution.BE.Repositories", "MS.SearchSolution.BE.Repositories\MS.SearchSolution.BE.Repositories.csproj", "{E523A172-160C-4E3A-84D4-12BF45E2FC80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.SearchSolution.BE.Repositories", "MS.SearchSolution.BE.Repositories\MS.SearchSolution.BE.Repositories.csproj", "{E523A172-160C-4E3A-84D4-12BF45E2FC80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MS.SearchSolution.BE.Services", "MS.SearchSolution.BE.Services\MS.SearchSolution.BE.Services.csproj", "{D651FF79-5942-4F53-8E3B-357FE40F9089}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E523A172-160C-4E3A-84D4-12BF45E2FC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E523A172-160C-4E3A-84D4-12BF45E2FC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E523A172-160C-4E3A-84D4-12BF45E2FC80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D651FF79-5942-4F53-8E3B-357FE40F9089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D651FF79-5942-4F53-8E3B-357FE40F9089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D651FF79-5942-4F53-8E3B-357FE40F9089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D651FF79-5942-4F53-8E3B-357FE40F9089}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

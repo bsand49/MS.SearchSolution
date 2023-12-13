@@ -4,6 +4,6 @@ namespace MS.SearchSolution.BE.Repositories.Interfaces
 {
     public interface IPersonsRepository
     {
-        public Task<IEnumerable<Person>> GetPersonsAsync();
+        Task<IEnumerable<Person>> GetPersonsAsync();
     }
 }

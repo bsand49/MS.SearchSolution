@@ -56,6 +56,7 @@
   <ItemGroup>
     <ProjectReference Include="..\MS.SearchSolution.BE.Models\MS.SearchSolution.BE.Models.csproj" />
     <ProjectReference Include="..\MS.SearchSolution.BE.Repositories\MS.SearchSolution.BE.Repositories.csproj" />
+    <ProjectReference Include="..\MS.SearchSolution.BE.Services\MS.SearchSolution.BE.Services.csproj" />
   </ItemGroup>
 
 </Project>
