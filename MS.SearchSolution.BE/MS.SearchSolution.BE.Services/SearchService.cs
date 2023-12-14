@@ -39,7 +39,7 @@ namespace MS.SearchSolution.BE.Services
                         person.Email.Contains(searchTerm, StringComparison.CurrentCultureIgnoreCase) ||
                         string.Concat(person.FirstName, " ", person.LastName).Contains(searchTerm, StringComparison.CurrentCultureIgnoreCase));
 
-                _logger.LogInformation("Filtered to {count} persons.", filteredPersons.Count());
+                _logger.LogInformation("Filtered to {count} persons using search term: {searchTerm}.", filteredPersons.Count(), searchTerm);
 
                 return new(filteredPersons);
             }
