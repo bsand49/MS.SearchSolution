@@ -1,0 +1,26 @@
+name: .NET Build
+
+on:
+  push:
+    branches: [ "main" , "feature/*"]
+  pull_request:
+    branches: [ "main" , "feature/*"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore Dependencies
+      run: dotnet restore
+      working-directory: MS.SearchSolution.BE
+    - name: Build
+      run: dotnet build --no-restore
+      working-directory: MS.SearchSolution.BE
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      working-directory: MS.SearchSolution.BE
