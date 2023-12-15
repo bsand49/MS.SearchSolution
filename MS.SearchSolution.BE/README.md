@@ -7,10 +7,12 @@ The API can be run locally on you machine via a terminal session, or utilising D
 
 ### HealthCheck
 This endpoint is used to identify the API is running. It simply returns a 200 response code.
+
 `GET ../api/healthcheck`
 
 ### Search
 This endpoint is used to search for person records, which are filtered using the searchTerm you provide.
+
 `GET ../api/search/persons?searchTerm={searchTerm}`
 
 ## Run BE API in Terminal
@@ -44,7 +46,7 @@ Before you begin, ensure you are in the BE's directory. I.e. `{pathToRepo}/MS.Se
 If you plan to run ms-searchsolution-fe on a port other than `localhost:3000` locally, or `localhost:9050` in Docker, you will need to amend the URLs specified in the CORS policy configured as standard in `MS.SearchSolutions.BE.API.Program.cs`, before you build the docker image.
 
 ### Build Docker Image
-To build the image, and run command
+To build the image, run command
 `docker build -t ms-searchsolution-be-api .`
 
 Check the image has been created using command
