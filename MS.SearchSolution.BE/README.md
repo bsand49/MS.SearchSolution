@@ -14,7 +14,6 @@ This endpoint is used to search for person records, which are filtered using the
 `GET ../api/search/persons?searchTerm={searchTerm}`
 
 ## Run BE API in Terminal
-
 Before you begin, ensure you are in the BE's directory. I.e. `{pathToRepo}/MS.SearchSolution.BE`.
 
 If you plan to run ms-searchsolution-fe on a port other than `localhost:3000` locally, or `localhost:9050` in Docker, you will need to amend the URLs specified in the CORS policy configured as standard in `MS.SearchSolutions.BE.API.Program.cs`, before you run the application.
@@ -40,7 +39,6 @@ Run command
 `dotnet test --no-build`
 
 ## Run BE API in Docker
-
 Before you begin, ensure you are in the BE's directory. I.e. `{pathToRepo}/MS.SearchSolution.BE`.
 
 If you plan to run ms-searchsolution-fe on a port other than `localhost:3000` locally, or `localhost:9050` in Docker, you will need to amend the URLs specified in the CORS policy configured as standard in `MS.SearchSolutions.BE.API.Program.cs`, before you build the docker image.
