@@ -7,6 +7,8 @@ using MS.SearchSolution.BE.Services;
 using MS.SearchSolution.BE.Services.Interfaces;
 using Newtonsoft.Json.Converters;
 
+var MyAllowedOrigins = "_myCORS";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -39,6 +41,18 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
     };
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowedOrigins, policy=>
+    {
+        policy
+            .WithOrigins("http://localhost:3000", "http://localhost:9050")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -49,6 +63,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowedOrigins);
 
 app.UseAuthorization();
 
