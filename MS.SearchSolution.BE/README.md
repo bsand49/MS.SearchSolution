@@ -7,10 +7,12 @@ The API can be run locally on you machine via a terminal session, or utilising D
 
 ### HealthCheck
 This endpoint is used to identify the API is running. It simply returns a 200 response code.
+
 `GET ../api/healthcheck`
 
 ### Search
 This endpoint is used to search for person records, which are filtered using the searchTerm you provide.
+
 `GET ../api/search/persons?searchTerm={searchTerm}`
 
 ## Run BE API in Terminal

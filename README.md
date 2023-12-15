@@ -23,17 +23,23 @@ To run a container for the FE, run command
 `docker run --name ms-searchsolution-fe -p 9050:3000 -d ms-searchsolution-fe`
 
 ### Stop and Remove Docker Containers
-To stop the containers, run command
+To stop the containers, run commands
+
 `docker stop ms-searchsolution-be-api`
+
 `docker stop ms-searchsolution-fe`
 
-To remove the containers, run command
+To remove the containers, run commands
 `docker rm ms-searchsolution-be-api`
+
 `docker rm ms-searchsolution-fe`
 
+
 ### Remove Docker Images
-To remove the image, run command
+To remove the image, run commands
+
 `docker image rm ms-searchsolution-be-api`
+
 `docker image rm ms-searchsolution-fe`
 
 ## Accessing the Applications

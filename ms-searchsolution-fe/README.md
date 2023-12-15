@@ -5,7 +5,7 @@ This is a simple web page that allows you to search for persons records. It quer
 ## Run FE in Terminal
 Before you begin, ensure you are in the FE's directory. I.e. `{pathToRepo}/ms-searchsolution-fe`.
 
-If you plan to run MS.SearchSolution.BE on a port other than `localhost:9049` in Docker, you will need to amend the `REACT_APP_BE_API_URL` variable in the .env file.
+If you plan to run MS.SearchSolution.BE on a port other than `localhost:9049` in Docker, you will need to amend the `REACT_APP_BE_API_URL` variable in the `.env` file.
 
 It is recommended you run the application in Node v20.10.0.
 
